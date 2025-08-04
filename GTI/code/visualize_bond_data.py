@@ -78,13 +78,19 @@ def create_full_plot(df, icon_dir, output_file="bond_spreads_vs_ratings.png",
         "axes.titlesize": 40, "axes.labelsize": 32,
         "xtick.labelsize": 24, "ytick.labelsize": 24,
         "legend.fontsize": 24,
-        "font.family": "Arial",
-        "font.sans-serif": ["Arial"],
+        "font.family": "sans-serif",
+        "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],  # Arial first
         "xtick.direction": "in",
         "ytick.direction": "in",
         "xtick.major.size": 6,
         "ytick.major.size": 6,
     })
+    
+    # Force matplotlib to use Arial if available
+    import matplotlib.font_manager as fm
+    arial_fonts = [f for f in fm.fontManager.ttflist if f.name == 'Arial']
+    if arial_fonts:
+        plt.rcParams['font.sans-serif'].insert(0, 'Arial')
     
     palette = sns.color_palette("bright", 3)
     rng = np.random.default_rng(42)  # Fixed seed for reproducibility
@@ -252,8 +258,8 @@ def create_investment_grade_plot(df, icon_dir, output_file="investment_grade_plo
     # Reset matplotlib defaults
     mpl.rcdefaults()
     plt.rcParams.update({
-        'font.family': 'Arial',
-        'font.sans-serif': ['Arial'],
+        'font.family': 'sans-serif',
+        'font.sans-serif': ['Arial', 'Helvetica', 'DejaVu Sans'],  # Arial first
         'font.size': 12,
         'axes.titlesize': 40,
         'axes.labelsize': 32,
@@ -265,6 +271,12 @@ def create_investment_grade_plot(df, icon_dir, output_file="investment_grade_plo
         'xtick.major.size': 6,
         'ytick.major.size': 6,
     })
+    
+    # Force matplotlib to use Arial if available
+    import matplotlib.font_manager as fm
+    arial_fonts = [f for f in fm.fontManager.ttflist if f.name == 'Arial']
+    if arial_fonts:
+        plt.rcParams['font.sans-serif'].insert(0, 'Arial')
     
     rng = np.random.default_rng(42)
     palette = sns.color_palette("bright", 3)
