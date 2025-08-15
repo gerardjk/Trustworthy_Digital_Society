@@ -98,8 +98,8 @@ def extract_base_rating(rating_text):
     if not rating_text or rating_text in ['N/A', '-', '', 'NR']:
         return 'N/A'
     
-    # Clean the rating text
-    clean_rating = rating_text.replace('[upgrade]', '').replace('[downgrade]', '').strip()
+    # Clean the rating text (now with extra spaces in the indicators)
+    clean_rating = rating_text.replace('    [upgrade]', '').replace('    [downgrade]', '').strip()
     
     # Handle special cases
     if clean_rating in ['SD', 'RD']:
@@ -116,12 +116,12 @@ def convert_rating_to_numeric(rating_text, rating_dict):
     if not rating_text:
         return None
     
-    # Check for upgrade/downgrade indicators
+    # Check for upgrade/downgrade indicators (with extra spaces)
     upgrade_modifier = 0
     if isinstance(rating_text, str):
-        if '[upgrade]' in rating_text:
+        if '    [upgrade]' in rating_text or '[upgrade]' in rating_text:
             upgrade_modifier = 1/3
-        elif '[downgrade]' in rating_text:
+        elif '    [downgrade]' in rating_text or '[downgrade]' in rating_text:
             upgrade_modifier = -1/3
     
     # Get base rating
@@ -255,9 +255,9 @@ def scrape_credit_ratings(driver):
                         teal_icons = cell.find_elements(By.CSS_SELECTOR, teal_selector)
                         
                         if red_icons:
-                            cell_text = f"{cell_text} [downgrade]"
+                            cell_text = f"{cell_text}    [downgrade]"
                         elif teal_icons:
-                            cell_text = f"{cell_text} [upgrade]"
+                            cell_text = f"{cell_text}    [upgrade]"
                     
                     row_data.append(cell_text)
                 
