@@ -1,0 +1,8 @@
+,VA,PSV,GE,RQ,RL,CC
+Voice & Accountability (VA),1,,,,,
+Political Stability & Absence of Violence (PSV),0.71,1,,,,
+Government Effectiveness (GA),0.72,0.72,1,,,
+Regulatory Quality (RA),0.75,0.65,0.92,1,,
+Rule of Law (RL),0.81,0.78,0.93,0.91,1,
+Control of Corruption (CC),0.77,0.76,0.91,0.86,0.94,1
+,,,,,,

@@ -1,0 +1,25 @@
+2025-08-15 10:06:37,176 - INFO - Starting World Government Bonds data scraping...
+2025-08-15 10:06:37,176 - INFO - ====== WebDriver manager ======
+2025-08-15 10:06:37,282 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-15 10:06:37,325 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-15 10:06:37,365 - INFO - There is no [mac64] chromedriver "139.0.7258.68" for browser google-chrome "139.0.7258" in cache
+2025-08-15 10:06:37,369 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-15 10:06:37,452 - INFO - WebDriver version 139.0.7258.68 selected
+2025-08-15 10:06:37,453 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.68/mac-arm64/chromedriver-mac-arm64.zip
+2025-08-15 10:06:37,453 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.68/mac-arm64/chromedriver-mac-arm64.zip
+2025-08-15 10:06:37,580 - INFO - Driver downloading response is 200
+2025-08-15 10:06:38,884 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-15 10:06:38,974 - INFO - Driver has been saved in cache [/Users/mac/.wdm/drivers/chromedriver/mac64/139.0.7258.68]
+2025-08-15 10:06:39,879 - INFO - Chrome WebDriver initialized successfully
+2025-08-15 10:06:39,880 - INFO - Starting bond spreads scraping...
+2025-08-15 10:06:48,898 - INFO - Saved 70 bond spread records
+2025-08-15 10:06:48,898 - INFO - Starting credit ratings scraping...
+2025-08-15 10:06:58,282 - INFO - Saved 74 credit rating records
+2025-08-15 10:06:58,282 - INFO - Merging datasets...
+2025-08-15 10:06:58,284 - INFO - Saved merged dataset with 70 countries
+2025-08-15 10:06:58,284 - INFO - Scraping completed successfully!
+2025-08-15 10:06:58,284 - INFO - Output files:
+2025-08-15 10:06:58,284 - INFO -   - government_bond_spreads.csv
+2025-08-15 10:06:58,284 - INFO -   - world_credit_ratings_with_numeric.csv
+2025-08-15 10:06:58,284 - INFO -   - credit_ratings_and_spreads.csv (merged data)
+2025-08-15 10:06:58,375 - INFO - WebDriver closed
